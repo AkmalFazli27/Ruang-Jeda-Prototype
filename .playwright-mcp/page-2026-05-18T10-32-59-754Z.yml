@@ -1,0 +1,33 @@
+- generic [ref=e333]:
+  - generic [ref=e334]:
+    - generic [ref=e335]:
+      - img [ref=e336]
+      - heading "Ruang Jeda" [level=1] [ref=e338]
+    - paragraph [ref=e339]:
+      - text: Selamat malam, Raka.
+      - text: Apa yang sedang mengganggu pikiranmu?
+  - generic [ref=e340]:
+    - generic [ref=e341]:
+      - generic [ref=e368]:
+        - button "Judul Besar" [ref=e369]:
+          - img [ref=e370]
+        - button "Judul Kecil" [ref=e372]:
+          - img [ref=e373]
+        - button "Normal Text" [ref=e375]:
+          - img [ref=e376]
+        - button "Bold (⌘B)" [ref=e378]:
+          - img [ref=e379]
+        - button "Italic (⌘I)" [ref=e381]:
+          - img [ref=e382]
+        - button "Underline (⌘U)" [ref=e384]:
+          - img [ref=e385]
+        - button "Bullet List" [ref=e387]:
+          - img [ref=e388]
+        - button "Numbered List" [ref=e389]:
+          - img [ref=e390]
+      - paragraph [ref=e393]: Saya merasa sangat capek dan cemas hari ini.
+    - generic [ref=e406]:
+      - img [ref=e407]
+      - generic [ref=e410]: 8 kata
+  - button "Jeda Sejenak" [active] [ref=e347]
+  - paragraph [ref=e348]: 🔒 Semua yang kamu tulis bersifat privat dan aman

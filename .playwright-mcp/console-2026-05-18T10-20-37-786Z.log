@@ -1,0 +1,6 @@
+[   18785ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5174/@vite/client:963
+[   21148ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5174/node_modules/.vite/deps/@radix-ui_react-switch.js?v=6ce088c4:0
+[   21153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5174/node_modules/.vite/deps/clsx.js?v=f1e95e09:0
+[   21153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5174/node_modules/.vite/deps/recharts.js?v=836c9fe9:0
+[   21153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5174/node_modules/.vite/deps/tailwind-merge.js?v=e08dcff8:0
+[   21153ms] [ERROR] WebSocket connection to 'ws://localhost:5174/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:5174/@vite/client:1034

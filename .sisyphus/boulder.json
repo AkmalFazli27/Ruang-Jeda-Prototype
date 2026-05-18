@@ -1,0 +1,75 @@
+{
+  "active_plan": "D:\\Ameng\\Kuliah\\IMK\\GEMASTIK 2026\\Ruang-Jeda-Prototype\\.sisyphus\\plans\\ruang-jeda-dev.md",
+  "started_at": "2026-05-18T09:06:25.927Z",
+  "session_ids": [
+    "ses_1c664ac63ffebLz9AvXA23GO8t",
+    "ses_1c5682cd9ffeeOy3mixXuGeLqE",
+    "ses_1c5682cbfffezKxyEUMQYwwxZ8",
+    "ses_1c5682ca2ffet65ycaGgpgWequ",
+    "ses_1c5682bf9ffeL3ERlfM3tDW7n9"
+  ],
+  "session_origins": {
+    "ses_1c664ac63ffebLz9AvXA23GO8t": "direct",
+    "ses_1c5682cd9ffeeOy3mixXuGeLqE": "appended",
+    "ses_1c5682cbfffezKxyEUMQYwwxZ8": "appended",
+    "ses_1c5682ca2ffet65ycaGgpgWequ": "appended",
+    "ses_1c5682bf9ffeL3ERlfM3tDW7n9": "appended"
+  },
+  "plan_name": "ruang-jeda-dev",
+  "agent": "atlas",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "Update warna journaling Screen1Home",
+      "session_id": "ses_1c578c167ffeB7YBfNn4HP53jZ",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-05-18T10:01:45.858Z"
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "Update animasi breathing Screen3Breathing",
+      "session_id": "ses_1c5754fd7ffefYKJuUToPEHgGz",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-05-18T10:04:55.898Z"
+    },
+    "todo:3": {
+      "task_key": "todo:3",
+      "task_label": "3",
+      "task_title": "Buat Screen6History dengan journal list + charts",
+      "session_id": "ses_1c5728551ffeKWuTWp6nL7U08f",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-05-18T10:09:18.242Z"
+    },
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "Buat Screen7Profile dengan info user + statistik + settings",
+      "session_id": "ses_1c56ea24affebCGzMHi8xrmvCH",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-05-18T10:12:39.437Z"
+    },
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "Update App.tsx dengan journal entries state + navigation",
+      "session_id": "ses_1c56ba3d5ffefg4zK8GlUyP7Tn",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-05-18T10:16:00.395Z"
+    },
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "**Plan Compliance Audit** — `oracle`",
+      "session_id": "ses_1c5682ca2ffet65ycaGgpgWequ",
+      "agent": "oracle",
+      "updated_at": "2026-05-18T10:18:09.439Z"
+    }
+  }
+}

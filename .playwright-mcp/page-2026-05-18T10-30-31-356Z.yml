@@ -1,0 +1,11 @@
+- generic [ref=e303]:
+  - generic [ref=e304]:
+    - generic [ref=e305]:
+      - img [ref=e306]
+      - heading "Latihan Pernapasan 4-7-8" [level=2] [ref=e310]
+    - paragraph [ref=e311]: Teknik pernapasan untuk menenangkan diri
+  - generic [ref=e316]: 🫁
+  - generic [ref=e317]:
+    - heading "Siap Memulai?" [level=3] [ref=e318]
+    - paragraph [ref=e319]: Temukan posisi nyaman dan ikuti ritme pernapasan
+  - button "Mulai Latihan" [ref=e321]
