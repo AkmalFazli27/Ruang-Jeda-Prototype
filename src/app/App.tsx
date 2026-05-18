@@ -93,41 +93,46 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1B41] text-white overflow-hidden relative">
-      {/* Background gradient overlay */}
-      <div className="fixed inset-0 bg-gradient-to-b from-[#1A1B41] via-[#1A1B41] to-[#0f1028] pointer-events-none" />
+    <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
+      <div className="relative w-[393px] h-[852px] max-h-[90vh] bg-[#1A1B41] text-white overflow-hidden rounded-[3rem] shadow-2xl border-[14px] border-black shrink-0">
+        {/* Dynamic Island */}
+        <div className="w-32 h-7 bg-black rounded-full absolute top-2 left-1/2 -translate-x-1/2 z-50" />
 
-      {/* Subtle line pattern */}
-      <div
-        className="fixed inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)",
-          backgroundSize: "50px 50px"
-        }}
-      />
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1B41] via-[#1A1B41] to-[#0f1028] pointer-events-none" />
 
-      {/* Noise texture */}
-      <NoiseTexture />
+        {/* Subtle line pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)",
+            backgroundSize: "50px 50px"
+          }}
+        />
 
-      {/* Main content with page transitions */}
-      <div className="relative z-10 max-w-md mx-auto pb-24">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentScreen}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {renderScreen()}
-          </motion.div>
-        </AnimatePresence>
+        {/* Noise texture */}
+        <NoiseTexture />
+
+        {/* Main content with page transitions */}
+        <div className="h-full overflow-y-auto pb-24">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentScreen}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {renderScreen()}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Bottom Navigation */}
+        {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile") && (
+          <BottomNav activeScreen={currentScreen} onNavigate={handleNavigation} />
+        )}
       </div>
-
-      {/* Bottom Navigation */}
-      {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile") && (
-        <BottomNav activeScreen={currentScreen} onNavigate={handleNavigation} />
-      )}
     </div>
   );
 }
