@@ -13,7 +13,7 @@ export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-[#1A1B41]/80 backdrop-blur-xl border-t border-[#B983FF]/10">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[#1A1B41]/80 backdrop-blur-xl border-t border-[#B983FF]/10">
       <div className="max-w-md mx-auto px-6 py-4">
         <div className="flex justify-around items-center">
           {navItems.map((item) => {

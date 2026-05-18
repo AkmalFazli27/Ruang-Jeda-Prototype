@@ -110,7 +110,7 @@ export default function App() {
       <NoiseTexture />
 
       {/* Main content with page transitions */}
-      <div className="relative z-10 max-w-md mx-auto">
+      <div className="relative z-10 max-w-md mx-auto pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentScreen}
