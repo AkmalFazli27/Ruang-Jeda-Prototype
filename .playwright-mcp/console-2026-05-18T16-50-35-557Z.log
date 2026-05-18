@@ -1,0 +1,22 @@
+[     150ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-FD5SMSK5.js?v=ee5284f8:21608
+[     236ms] [ERROR] Warning: Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.%s true jsx jsx true jsx 
+    at style
+    at div
+    at RichTextEditor (http://localhost:5173/src/app/components/ruangjeda/RichTextEditor.tsx?t=1779120316775:20:34)
+    at div
+    at GlassCard (http://localhost:5173/src/app/components/ruangjeda/GlassCard.tsx:17:29)
+    at div
+    at Screen1Home (http://localhost:5173/src/app/components/ruangjeda/Screen1Home.tsx?t=1779120316775:23:31)
+    at div
+    at MotionDOMComponent (http://localhost:5173/node_modules/.vite/deps/motion_react.js?v=ee5284f8:8882:40)
+    at PopChildMeasure (http://localhost:5173/node_modules/.vite/deps/motion_react.js?v=ee5284f8:8021:23)
+    at PopChild (http://localhost:5173/node_modules/.vite/deps/motion_react.js?v=ee5284f8:8048:21)
+    at PresenceChild (http://localhost:5173/node_modules/.vite/deps/motion_react.js?v=ee5284f8:8098:24)
+    at AnimatePresence (http://localhost:5173/node_modules/.vite/deps/motion_react.js?v=ee5284f8:8175:26)
+    at div
+    at div
+    at div
+    at App (http://localhost:5173/src/app/App.tsx?t=1779122719731:31:45) @ http://localhost:5173/node_modules/.vite/deps/chunk-FD5SMSK5.js?v=ee5284f8:520
+[     369ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0
