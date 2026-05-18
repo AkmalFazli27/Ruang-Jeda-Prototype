@@ -1,0 +1,30 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - img [ref=e9]
+        - heading "Ruang Jeda" [level=1] [ref=e11]
+      - paragraph [ref=e12]:
+        - text: Selamat malam, Raka.
+        - text: Apa yang sedang mengganggu pikiranmu?
+    - generic [ref=e15]: Ketikkan apa pun di sini, kami mendengarkan...
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: 💡 Tips
+        - paragraph [ref=e19]: Gunakan toolbar untuk format teks
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: ⌨️ Shortcut
+        - paragraph [ref=e22]: ctrl + B Bold, ctrl + I Italic
+    - button "Jeda Sejenak" [disabled] [ref=e23]
+    - paragraph [ref=e24]: 🔒 Semua yang kamu tulis bersifat privat dan aman
+  - navigation [ref=e25]:
+    - generic [ref=e27]:
+      - button "Home" [ref=e28]:
+        - img [ref=e29]
+        - generic [ref=e32]: Home
+      - button "Riwayat" [ref=e33]:
+        - img [ref=e34]
+        - generic [ref=e37]: Riwayat
+      - button "Profil" [ref=e38]:
+        - img [ref=e39]
+        - generic [ref=e42]: Profil

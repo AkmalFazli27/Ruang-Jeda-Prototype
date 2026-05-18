@@ -6,14 +6,22 @@
     "ses_1c5682cd9ffeeOy3mixXuGeLqE",
     "ses_1c5682cbfffezKxyEUMQYwwxZ8",
     "ses_1c5682ca2ffet65ycaGgpgWequ",
-    "ses_1c5682bf9ffeL3ERlfM3tDW7n9"
+    "ses_1c5682bf9ffeL3ERlfM3tDW7n9",
+    "ses_1c41faccdffeElHbfmQ3Y5DL35",
+    "ses_1c41f95fdffe9Q4C3DS550wKPn",
+    "ses_1c41f7fc7ffeqSrLtQsRpwWqyb",
+    "ses_1c41f6579ffecTa8SFDYF1Duqf"
   ],
   "session_origins": {
     "ses_1c664ac63ffebLz9AvXA23GO8t": "direct",
     "ses_1c5682cd9ffeeOy3mixXuGeLqE": "appended",
     "ses_1c5682cbfffezKxyEUMQYwwxZ8": "appended",
     "ses_1c5682ca2ffet65ycaGgpgWequ": "appended",
-    "ses_1c5682bf9ffeL3ERlfM3tDW7n9": "appended"
+    "ses_1c5682bf9ffeL3ERlfM3tDW7n9": "appended",
+    "ses_1c41faccdffeElHbfmQ3Y5DL35": "appended",
+    "ses_1c41f95fdffe9Q4C3DS550wKPn": "appended",
+    "ses_1c41f7fc7ffeqSrLtQsRpwWqyb": "appended",
+    "ses_1c41f6579ffecTa8SFDYF1Duqf": "appended"
   },
   "plan_name": "ruang-jeda-dev",
   "agent": "atlas",
@@ -67,9 +75,10 @@
       "task_key": "final-wave:f1",
       "task_label": "F1",
       "task_title": "**Plan Compliance Audit** — `oracle`",
-      "session_id": "ses_1c5682ca2ffet65ycaGgpgWequ",
-      "agent": "oracle",
-      "updated_at": "2026-05-18T10:18:09.439Z"
+      "session_id": "ses_1c41f7fc7ffeqSrLtQsRpwWqyb",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-05-18T16:23:54.196Z"
     }
   }
 }

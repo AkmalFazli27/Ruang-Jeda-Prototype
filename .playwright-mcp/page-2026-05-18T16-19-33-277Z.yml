@@ -1,0 +1,64 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - img [ref=e47]
+          - heading "Riwayat Jurnal" [level=1] [ref=e49]
+        - paragraph [ref=e50]: Lihat kembali perjalanan emosimu.
+      - generic [ref=e51]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - img [ref=e55]
+            - heading "Statistik Kecemasan" [level=2] [ref=e58]
+          - generic [ref=e59]:
+            - paragraph [ref=e60]: Tren Kecemasan
+            - generic [ref=e62]:
+              - img [ref=e63]:
+                - generic [ref=e70]: 18 Mei 2026, 23:19
+                - generic [ref=e72]:
+                  - generic [ref=e74]: Ringan
+                  - generic [ref=e76]: Sedang
+                  - generic [ref=e78]: Tinggi
+              - generic:
+                - generic:
+                  - paragraph: 18 Mei 2026, 23:19
+                  - list:
+                    - listitem: "Tingkat : Ringan"
+          - generic [ref=e84]:
+            - paragraph [ref=e85]: Distribusi Tier
+            - img [ref=e88]:
+              - generic [ref=e93]:
+                - generic [ref=e95]: Ringan
+                - generic [ref=e97]: Sedang
+                - generic [ref=e99]: Tinggi
+              - generic [ref=e101]:
+                - generic [ref=e103]: "0"
+                - generic [ref=e105]: "1"
+                - generic [ref=e107]: "2"
+                - generic [ref=e109]: "3"
+                - generic [ref=e111]: "4"
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - img [ref=e120]
+            - heading "Entri Jurnal" [level=2] [ref=e122]
+            - generic [ref=e123]: 1 entri
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - paragraph [ref=e128]: dfasdfas
+              - generic [ref=e129]: 🟢 Ringan
+            - generic [ref=e130]:
+              - img [ref=e131]
+              - generic [ref=e134]: 18 Mei 2026, 23:19
+    - navigation [ref=e135]:
+      - generic [ref=e137]:
+        - button "Home" [ref=e138]:
+          - img [ref=e139]
+          - generic [ref=e142]: Home
+        - button "Riwayat" [active] [ref=e143]:
+          - img [ref=e144]
+          - generic [ref=e147]: Riwayat
+        - button "Profil" [ref=e148]:
+          - img [ref=e149]
+          - generic [ref=e152]: Profil
+  - generic [ref=e153]: "0"
