@@ -215,6 +215,7 @@ Aplikasi dioptimalkan untuk:
 
 ## 🔮 Pengembangan Selanjutnya
 
+- [ ] Ganti warna backround teks pada safe space journaling menjadi #ffc4a3 dan warna teks menjadi hitam
 - [ ] Tab riwayat yang berisi dummy history chat
 - [ ] Lengkapi tab profil
 - [ ] Ubah animasi lingkaran aturan nafas. 4 detik menghirup lingkaran membesar. 7 detik tahan lingkaran tetap. 8 detik hembus lingkaran mengecil.
