@@ -6,11 +6,13 @@ interface RichTextEditorProps {
   value: string;
   onChange: (text: string) => void;
   placeholder?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
 type FormatCommand = "bold" | "italic" | "underline" | "insertUnorderedList" | "insertOrderedList";
 
-export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorProps) {
+export function RichTextEditor({ value, onChange, placeholder, bgColor, textColor }: RichTextEditorProps) {
   const editorRef = useRef<HTMLDivElement>(null);
   const [showToolbar, setShowToolbar] = useState(false);
   const [activeFormats, setActiveFormats] = useState<Set<string>>(new Set());
@@ -132,7 +134,11 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
         onKeyDown={handleKeyDown}
         onMouseUp={updateActiveFormats}
         onKeyUp={updateActiveFormats}
-        className="flex-1 bg-transparent text-white outline-none resize-none text-base leading-relaxed rich-text-editor overflow-y-auto"
+        className="flex-1 outline-none resize-none text-base leading-relaxed rich-text-editor overflow-y-auto"
+        style={{
+          backgroundColor: bgColor || "transparent",
+          color: textColor || "white",
+        }}
         data-placeholder={placeholder}
         suppressContentEditableWarning
       />
@@ -140,7 +146,7 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
       <style jsx>{`
         .rich-text-editor[contenteditable]:empty:before {
           content: attr(data-placeholder);
-          color: rgb(156 163 175);
+          color: rgba(0, 0, 0, 0.4);
           pointer-events: none;
         }
 

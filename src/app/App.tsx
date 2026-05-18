@@ -6,6 +6,8 @@ import { Screen2Triage } from "./components/ruangjeda/Screen2Triage";
 import { Screen3Breathing } from "./components/ruangjeda/Screen3Breathing";
 import { Screen4Music } from "./components/ruangjeda/Screen4Music";
 import { Screen5Counseling } from "./components/ruangjeda/Screen5Counseling";
+import Screen6History, { type JournalEntry } from "./components/ruangjeda/Screen6History";
+import { Screen7Profile } from "./components/ruangjeda/Screen7Profile";
 import { motion, AnimatePresence } from "motion/react";
 
 type Screen = "home" | "triage" | "breathing" | "music" | "counseling" | "history" | "profile";
@@ -15,19 +17,28 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>("home");
   const [detectedTier, setDetectedTier] = useState<Tier>("tier2");
   const [journalEntry, setJournalEntry] = useState("");
+  const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
 
   const handleJournalSubmit = (text: string) => {
     setJournalEntry(text);
     // Simulate AI analysis - in real app, this would call the AI API
     // For demo, we'll detect tier based on text length/keywords
     const lowerText = text.toLowerCase();
+    let newTier: Tier;
     if (lowerText.includes("krisis") || lowerText.includes("bunuh diri") || lowerText.includes("menyerah")) {
-      setDetectedTier("tier3");
+      newTier = "tier3";
     } else if (lowerText.includes("cemas") || lowerText.includes("stress") || lowerText.includes("capek")) {
-      setDetectedTier("tier2");
+      newTier = "tier2";
     } else {
-      setDetectedTier("tier1");
+      newTier = "tier1";
     }
+    setDetectedTier(newTier);
+    setJournalEntries(prev => [{
+      id: Date.now(),
+      text,
+      tier: newTier,
+      timestamp: new Date()
+    }, ...prev]);
     setCurrentScreen("triage");
   };
 
@@ -73,23 +84,9 @@ export default function App() {
       case "counseling":
         return <Screen5Counseling onConnect={handleCounselingConnect} onBackHome={() => setCurrentScreen("home")} />;
       case "history":
-        return (
-          <div className="min-h-screen flex items-center justify-center p-6 pb-24">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-4">Riwayat Jurnal</h2>
-              <p className="text-gray-400">Fitur riwayat akan segera hadir</p>
-            </div>
-          </div>
-        );
+        return <Screen6History journalEntries={journalEntries} />;
       case "profile":
-        return (
-          <div className="min-h-screen flex items-center justify-center p-6 pb-24">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-4">Profil</h2>
-              <p className="text-gray-400">Fitur profil akan segera hadir</p>
-            </div>
-          </div>
-        );
+        return <Screen7Profile journalEntries={journalEntries} />;
       default:
         return <Screen1Home onSubmit={handleJournalSubmit} />;
     }

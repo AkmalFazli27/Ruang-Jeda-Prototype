@@ -79,7 +79,7 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
           </div>
           <div className="bg-white/5 backdrop-blur-xl rounded-xl p-3 border border-[#FFD5BA]/10">
             <p className="text-xs text-[#FFD5BA] font-semibold mb-1">⌨️ Shortcut</p>
-            <p className="text-xs text-gray-400">⌘B Bold, ⌘I Italic</p>
+            <p className="text-xs text-gray-400">ctrl + B Bold, ctrl + I Italic</p>
           </div>
         </motion.div>
       )}

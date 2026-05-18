@@ -13,8 +13,8 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
   const [cycleCount, setCycleCount] = useState(0);
 
   const phases = [
-    { name: "Tarik Napas", duration: 4, instruction: "Hirup udara perlahan melalui hidung", scale: 1.5 },
-    { name: "Tahan", duration: 7, instruction: "Tahan napas dengan lembut", scale: 1.5 },
+    { name: "Tarik Napas", duration: 4, instruction: "Hirup udara perlahan melalui hidung", scale: 1.8 },
+    { name: "Tahan", duration: 7, instruction: "Tahan napas dengan lembut", scale: 1.8 },
     { name: "Buang Napas", duration: 8, instruction: "Hembuskan perlahan melalui mulut", scale: 0.8 }
   ];
 
@@ -72,8 +72,7 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
       <div className="relative">
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${currentPhase}-${cycleCount}`}
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 1, opacity: 0 }}
             animate={{
               scale: isActive ? currentPhaseData.scale : 1,
               opacity: 1
