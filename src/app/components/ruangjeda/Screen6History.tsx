@@ -77,7 +77,7 @@ export default function Screen6History({ journalEntries }: Screen6HistoryProps) 
   const barData = buildBarData(journalEntries);
 
   return (
-    <div className="min-h-screen flex flex-col p-6 pb-24">
+    <div className="min-h-full flex flex-col p-6 pb-24">
       <div className="mb-6 mt-4">
         <div className="flex items-center gap-2 mb-2">
           <BookOpen className="w-6 h-6 text-[#B983FF]" />

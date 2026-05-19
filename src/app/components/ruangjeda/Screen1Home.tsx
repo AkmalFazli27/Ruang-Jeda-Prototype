@@ -31,7 +31,7 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
   const hasContent = journalText.replace(/<[^>]*>/g, "").trim().length > 0;
 
   return (
-    <div className="min-h-screen flex flex-col p-6 pb-24">
+    <div className="min-h-full flex flex-col p-6 pb-24">
       {/* Header */}
       <div className="mb-6 mt-4">
         <div className="flex items-center gap-2 mb-2">

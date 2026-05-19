@@ -32,7 +32,7 @@ export function Screen2Triage({ tier, onContinue }: Screen2TriageProps) {
   const config = tierConfig[tier];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 pb-24">
+    <div className="min-h-full flex flex-col items-center justify-center p-6 pb-24">
       {/* Animated Circle Visualization */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}

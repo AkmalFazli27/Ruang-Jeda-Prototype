@@ -34,7 +34,7 @@ export function Screen7Profile({ journalEntries }: Screen7ProfileProps) {
   const musicSessions = 12;
 
   return (
-    <div className="min-h-screen flex flex-col p-6 pb-24">
+    <div className="min-h-full flex flex-col p-6 pb-24">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}

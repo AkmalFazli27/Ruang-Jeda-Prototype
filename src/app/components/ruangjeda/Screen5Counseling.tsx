@@ -9,7 +9,7 @@ interface Screen5CounselingProps {
 
 export function Screen5Counseling({ onConnect, onBackHome }: Screen5CounselingProps) {
   return (
-    <div className="min-h-screen flex flex-col p-6 pb-24">
+    <div className="min-h-full flex flex-col p-6 pb-24">
       {/* Header */}
       <div className="mb-8 mt-4">
         <motion.div

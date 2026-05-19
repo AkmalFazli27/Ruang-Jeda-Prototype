@@ -56,7 +56,7 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 pb-24 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41]">
+    <div className="min-h-full flex flex-col items-center justify-center p-6 pb-24 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41]">
       {/* Header */}
       <div className="absolute top-8 left-0 right-0 px-6">
         <div className="flex items-center justify-center gap-2 mb-2">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NoiseTexture } from "./components/ruangjeda/NoiseTexture";
 import { BottomNav } from "./components/ruangjeda/BottomNav";
 import { Screen1Home } from "./components/ruangjeda/Screen1Home";
@@ -18,6 +18,13 @@ export default function App() {
   const [detectedTier, setDetectedTier] = useState<Tier>("tier2");
   const [journalEntry, setJournalEntry] = useState("");
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [currentScreen]);
 
   const handleJournalSubmit = (text: string) => {
     setJournalEntry(text);
@@ -114,18 +121,20 @@ export default function App() {
         <NoiseTexture />
 
         {/* Main content with page transitions */}
-        <div className="h-full overflow-y-auto pb-24">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentScreen}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              {renderScreen()}
-            </motion.div>
-          </AnimatePresence>
+        <div ref={scrollContainerRef} className="h-full overflow-y-auto pb-24 hide-scrollbar [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="max-w-[360px] w-full mx-auto pt-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentScreen}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderScreen()}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Bottom Navigation */}

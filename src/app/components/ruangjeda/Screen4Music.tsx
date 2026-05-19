@@ -15,7 +15,7 @@ export function Screen4Music({ onContinue }: Screen4MusicProps) {
   const currentPlaylist = playlists.find(p => p.id === selectedPlaylist);
 
   return (
-    <div className="min-h-screen flex flex-col p-6 pb-32">
+    <div className="min-h-full flex flex-col p-6 pb-32">
       {/* Header */}
       <div className="mb-6 mt-4">
         <div className="flex items-center gap-2 mb-2">
