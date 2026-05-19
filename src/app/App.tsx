@@ -94,29 +94,26 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
-      <div className="relative w-[393px] h-[852px] max-h-[90vh] bg-[#1A1B41] text-white overflow-hidden rounded-[3rem] shadow-2xl border-[14px] border-black shrink-0">
-        {/* Dynamic Island */}
-        <div className="w-32 h-7 bg-black rounded-full absolute top-2 left-1/2 -translate-x-1/2 z-50" />
+    <div className="min-h-[100dvh] bg-[#1A1B41] text-white relative">
+      {/* Background gradient overlay */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#1A1B41] via-[#1A1B41] to-[#0f1028] pointer-events-none" />
 
-        {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1B41] via-[#1A1B41] to-[#0f1028] pointer-events-none" />
+      {/* Subtle line pattern */}
+      <div
+        className="fixed inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)",
+          backgroundSize: "50px 50px"
+        }}
+      />
 
-        {/* Subtle line pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02] pointer-events-none"
-          style={{
-            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)",
-            backgroundSize: "50px 50px"
-          }}
-        />
+      {/* Noise texture */}
+      <NoiseTexture />
 
-        {/* Noise texture */}
-        <NoiseTexture />
-
-        {/* Main content with page transitions */}
-        <div ref={scrollContainerRef} className="h-full overflow-y-auto pb-24 hide-scrollbar [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overflowAnchor: 'none' }}>
-          <div className="max-w-[360px] w-full mx-auto pt-10 relative h-dvh">
+      {/* Main content with page transitions */}
+      <div className="relative z-10 w-full max-w-md mx-auto min-h-[100dvh]">
+        <div ref={scrollContainerRef} className="h-full overflow-y-auto pb-[calc(6rem+env(safe-area-inset-bottom))] hide-scrollbar [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overflowAnchor: 'none' }}>
+          <div className="w-full mx-auto pt-10 relative">
             <AnimatePresence 
               mode="sync"
               onExitComplete={() => {

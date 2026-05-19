@@ -90,7 +90,7 @@ export function Screen4Music({ onContinue }: Screen4MusicProps) {
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="fixed bottom-20 left-6 right-6"
+          className="sticky bottom-24 left-6 right-6 z-20"
         >
           <GlassCard borderColor="#B983FF" className="bg-[#1A1B41]/90 backdrop-blur-2xl">
             {/* Waveform visualization */}
@@ -154,7 +154,7 @@ export function Screen4Music({ onContinue }: Screen4MusicProps) {
       {selectedPlaylist && (
         <button
           onClick={onContinue}
-          className="fixed bottom-[340px] left-6 right-6 bg-gradient-to-r from-[#FFD5BA] to-[#ffc4a3] text-[#1A1B41] font-bold py-3 rounded-2xl shadow-lg transition-all hover:shadow-xl"
+          className="w-full mt-6 bg-gradient-to-r from-[#FFD5BA] to-[#ffc4a3] text-[#1A1B41] font-bold py-3 rounded-2xl shadow-lg transition-all hover:shadow-xl"
         >
           Lanjutkan
         </button>
