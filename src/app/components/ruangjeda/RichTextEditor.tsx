@@ -100,7 +100,7 @@ export function RichTextEditor({ value, onChange, placeholder, bgColor, textColo
       {/* Toolbar - iPhone Notes style */}
       {showToolbar && (
         <div className="mb-3 pb-3 border-b border-white/10">
-          <div className="flex items-center gap-1 overflow-x-auto hide-scrollbar">
+          <div className="flex items-center gap-1 flex-wrap">
             {toolbarButtons.map((btn, index) => {
               const Icon = btn.icon;
               const isActive = activeFormats.has(btn.key);
