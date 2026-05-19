@@ -1,0 +1,22 @@
+- generic [ref=e4]:
+  - generic [ref=e221]:
+    - generic [ref=e222]:
+      - generic [ref=e223]:
+        - img [ref=e224]
+        - heading "Riwayat Jurnal" [level=1] [ref=e226]
+      - paragraph [ref=e227]: Lihat kembali perjalanan emosimu.
+    - generic [ref=e229]:
+      - img [ref=e230]
+      - heading "Belum ada jurnal" [level=3] [ref=e233]
+      - paragraph [ref=e234]: Mulai tulis jurnal pertamamu untuk melihat riwayat dan statistik kecemasan.
+  - navigation [ref=e28]:
+    - generic [ref=e30]:
+      - button "Home" [ref=e31]:
+        - img [ref=e32]
+        - generic [ref=e35]: Home
+      - button "Riwayat" [active] [ref=e36]:
+        - img [ref=e37]
+        - generic [ref=e40]: Riwayat
+      - button "Profil" [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e45]: Profil

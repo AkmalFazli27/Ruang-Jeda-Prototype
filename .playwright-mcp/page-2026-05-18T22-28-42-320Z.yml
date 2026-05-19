@@ -1,0 +1,63 @@
+- generic [ref=e4]:
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - heading "Profil" [level=1] [ref=e49]
+      - paragraph [ref=e50]: Informasi akun dan pengaturan
+    - generic [ref=e52]:
+      - heading "Profil Pengguna" [level=2] [ref=e53]:
+        - img [ref=e54]
+        - text: Profil Pengguna
+      - generic [ref=e57]:
+        - img [ref=e59]
+        - heading "Raka" [level=3] [ref=e62]
+        - generic [ref=e63]:
+          - img [ref=e64]
+          - generic [ref=e67]: raka@student.undip.ac.id
+    - generic [ref=e69]:
+      - heading "Statistik Penggunaan" [level=2] [ref=e70]:
+        - img [ref=e71]
+        - text: Statistik Penggunaan
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - img [ref=e75]
+          - generic [ref=e77]: "0"
+          - generic [ref=e78]: Jurnal
+        - generic [ref=e79]:
+          - img [ref=e80]
+          - generic [ref=e84]: "5"
+          - generic [ref=e85]: Nafas
+        - generic [ref=e86]:
+          - img [ref=e87]
+          - generic [ref=e91]: "12"
+          - generic [ref=e92]: Musik
+    - generic [ref=e94]:
+      - heading "Pengaturan Aplikasi" [level=2] [ref=e95]:
+        - img [ref=e96]
+        - text: Pengaturan Aplikasi
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - img [ref=e102]
+            - generic [ref=e105]: Notifikasi Pengingat
+          - switch [checked] [ref=e106]
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - img [ref=e110]
+            - generic [ref=e112]: Mode Gelap
+          - switch [checked] [ref=e113]
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - img [ref=e117]
+            - generic [ref=e121]: Suara Ambient
+          - switch [ref=e122]
+  - navigation [ref=e28]:
+    - generic [ref=e30]:
+      - button "Home" [ref=e31]:
+        - img [ref=e32]
+        - generic [ref=e35]: Home
+      - button "Riwayat" [ref=e36]:
+        - img [ref=e37]
+        - generic [ref=e40]: Riwayat
+      - button "Profil" [active] [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e45]: Profil

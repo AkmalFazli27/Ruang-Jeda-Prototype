@@ -1,0 +1,10 @@
+- generic [ref=e364]:
+  - img [ref=e368]
+  - generic [ref=e370]:
+    - generic [ref=e371]:
+      - img [ref=e372]
+      - generic [ref=e374]:
+        - 'heading "Tingkat Kecemasan: Sedang" [level=3] [ref=e375]'
+        - paragraph [ref=e376]: Kami mendeteksi kamu sedang berada di tingkat kecemasan sedang (Tier 2). Tidak apa-apa untuk merasa tidak baik-baik saja.
+    - paragraph [ref=e378]: "💡 Saran: Mari lakukan stabilisasi diri."
+  - button "Mari Lakukan Stabilisasi Diri" [ref=e379]
