@@ -56,9 +56,9 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
   };
 
   return (
-    <div className="min-h-full flex flex-col items-center justify-center p-6 pb-24 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41]">
+    <div className="min-h-[100svh] flex flex-col items-center p-6 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41]">
       {/* Header */}
-      <div className="absolute top-8 left-0 right-0 px-6">
+      <div className="w-full px-6 pt-8 pb-4">
         <div className="flex items-center justify-center gap-2 mb-2">
           <Wind className="w-6 h-6 text-[#B983FF]" />
           <h2 className="text-xl font-bold text-white">Latihan Pernapasan 4-7-8</h2>
@@ -68,6 +68,7 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
         </p>
       </div>
 
+      <div className="flex-1 flex flex-col items-center justify-center w-full">
       {/* Breathing Circle Animation */}
       <div className="relative">
         <AnimatePresence mode="wait">
@@ -144,8 +145,10 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
         </motion.div>
       </AnimatePresence>
 
+      </div>
+
       {/* Action Buttons */}
-      <div className="absolute bottom-24 left-6 right-6 space-y-3">
+      <div className="w-full space-y-3 pb-8">
         {!isActive && cycleCount === 0 && (
           <button
             onClick={startBreathing}
