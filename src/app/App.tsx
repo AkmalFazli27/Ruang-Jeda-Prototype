@@ -94,7 +94,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-[#1A1B41] text-white relative">
+    <div className="min-h-[100svh] bg-[#1A1B41] text-white relative">
       {/* Background gradient overlay */}
       <div className="fixed inset-0 bg-gradient-to-b from-[#1A1B41] via-[#1A1B41] to-[#0f1028] pointer-events-none" />
 
@@ -111,9 +111,9 @@ export default function App() {
       <NoiseTexture />
 
       {/* Main content with page transitions */}
-      <div className="relative z-10 w-full max-w-md mx-auto min-h-[100dvh]">
+      <div className="relative z-10 w-full max-w-md mx-auto min-h-[100svh]">
         <div ref={scrollContainerRef} className="h-full overflow-y-auto pb-[calc(6rem+env(safe-area-inset-bottom))] hide-scrollbar [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overflowAnchor: 'none' }}>
-          <div className="w-full mx-auto pt-10 relative">
+          <div className="w-full mx-auto pt-6 sm:pt-10 relative">
             <AnimatePresence 
               mode="sync"
               onExitComplete={() => {
@@ -122,7 +122,7 @@ export default function App() {
             >
               <motion.div
                 key={currentScreen}
-                className="absolute inset-0 w-full h-full"
+                className="relative w-full min-h-full"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
