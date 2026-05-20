@@ -56,7 +56,10 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
   };
 
   return (
-    <div className="min-h-full flex flex-col items-center p-6 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41]">
+    <>
+      {/* Fixed gradient overlay - covers full viewport always */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#1A1B41] via-[#0f1028] to-[#1A1B41] pointer-events-none" />
+      <div className="min-h-full flex flex-col items-center p-6 relative z-10">
       {/* Header */}
       <div className="w-full px-6 pt-8 pb-4">
         <div className="flex items-center justify-center gap-2 mb-2">
@@ -175,6 +178,6 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
           </>
         )}
       </div>
-    </div>
+    </>
   );
 }
