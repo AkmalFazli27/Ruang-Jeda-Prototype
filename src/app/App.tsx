@@ -22,16 +22,48 @@ export default function App() {
 
   const handleJournalSubmit = (text: string) => {
     setJournalEntry(text);
-    // Simulate AI analysis - in real app, this would call the AI API
-    // For demo, we'll detect tier based on text length/keywords
     const lowerText = text.toLowerCase();
+
+    const tier3Keywords = [
+      "krisis", "bunuh diri", "menyerah", "gak kuat", "tidak kuat",
+      "putus asa", "hampa", "kosong", "gak berguna", "tidak berguna",
+      "beban saja", "gak pantas hidup", "mau mengakhiri", "tidak ada harapan",
+      "lelah hidup", "gak ada gunanya", "sendirian", "tidak ada yang peduli",
+      "ingin menghilang", "gak mau hidup", "mati saja"
+    ];
+
+    const tier2Keywords = [
+      "cemas", "stress", "capek", "khawatir", "takut", "gelisah",
+      "panik", "tegang", "lelah", "burnout", "overthinking",
+      "gak bisa tidur", "susah tidur", "jantung berdebar", "sesak",
+      "pusing", "gak fokus", "down", "sedih", "kesepian",
+      "frustasi", "marah", "emosi", "gak semangat", "kehilangan motivasi",
+      "gak percaya diri", "insecure", "anxious", "overwhelmed", "tertekan",
+      "stres", "depresi", "galau", "bimbang", "bingung",
+      "gampang marah", "susah konsentrasi", "mual", "gemetar"
+    ];
+
+    const tier1Keywords = [
+      "baik", "senang", "happy", "semangat", "tenang",
+      "damai", "bersyukur", "puas", "rileks", "nyaman",
+      "excited", "motivasi", "percaya diri", "enjoy", "fun",
+      "seru", "alhamdulillah", "oke", "normal", "santai",
+      "bahagia", "lega", "positif", "optimis", "bersemangat"
+    ];
+
+    const hasTier3 = tier3Keywords.some(kw => lowerText.includes(kw));
+    const hasTier2 = tier2Keywords.some(kw => lowerText.includes(kw));
+    const hasTier1 = tier1Keywords.some(kw => lowerText.includes(kw));
+
     let newTier: Tier;
-    if (lowerText.includes("krisis") || lowerText.includes("bunuh diri") || lowerText.includes("menyerah")) {
+    if (hasTier3) {
       newTier = "tier3";
-    } else if (lowerText.includes("cemas") || lowerText.includes("stress") || lowerText.includes("capek")) {
+    } else if (hasTier2) {
       newTier = "tier2";
-    } else {
+    } else if (hasTier1) {
       newTier = "tier1";
+    } else {
+      newTier = "tier2";
     }
     setDetectedTier(newTier);
     setJournalEntries(prev => [{
