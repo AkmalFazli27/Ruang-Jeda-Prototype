@@ -178,6 +178,7 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
           </>
         )}
       </div>
+      </div>
     </>
   );
 }
