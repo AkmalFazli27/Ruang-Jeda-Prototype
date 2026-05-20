@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NoiseTexture } from "./components/ruangjeda/NoiseTexture";
 import { BottomNav } from "./components/ruangjeda/BottomNav";
 import { Screen1Home } from "./components/ruangjeda/Screen1Home";
@@ -72,6 +72,10 @@ export default function App() {
     }
   };
 
+  useEffect(() => {
+    scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [currentScreen]);
+
   const renderScreen = () => {
     switch (currentScreen) {
       case "home":
@@ -114,12 +118,7 @@ export default function App() {
       <div className="relative z-10 w-full max-w-md mx-auto min-h-[100svh]">
         <div ref={scrollContainerRef} className="h-full overflow-y-auto pb-[calc(6rem+env(safe-area-inset-bottom))] hide-scrollbar [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overflowAnchor: 'none' }}>
           <div className="w-full mx-auto pt-6 sm:pt-10 relative">
-            <AnimatePresence 
-              mode="sync"
-              onExitComplete={() => {
-                scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-              }}
-            >
+            <AnimatePresence mode="wait">
               <motion.div
                 key={currentScreen}
                 className="relative w-full min-h-full"
