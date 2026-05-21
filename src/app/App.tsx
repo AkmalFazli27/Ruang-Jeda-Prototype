@@ -8,9 +8,10 @@ import { Screen4Music } from "./components/ruangjeda/Screen4Music";
 import { Screen5Counseling } from "./components/ruangjeda/Screen5Counseling";
 import Screen6History, { type JournalEntry } from "./components/ruangjeda/Screen6History";
 import { Screen7Profile } from "./components/ruangjeda/Screen7Profile";
+import { Screen8Relax } from "./components/ruangjeda/Screen8Relax";
 import { motion, AnimatePresence } from "motion/react";
 
-type Screen = "home" | "triage" | "breathing" | "music" | "counseling" | "history" | "profile";
+type Screen = "home" | "triage" | "breathing" | "music" | "counseling" | "history" | "profile" | "relax";
 type Tier = "tier1" | "tier2" | "tier3";
 
 export default function App() {
@@ -103,7 +104,7 @@ export default function App() {
   };
 
   const handleNavigation = (screen: string) => {
-    if (screen === "home" || screen === "history" || screen === "profile") {
+    if (screen === "home" || screen === "history" || screen === "profile" || screen === "relax") {
       setCurrentScreen(screen as Screen);
     }
   };
@@ -122,6 +123,13 @@ export default function App() {
         return <Screen3Breathing onComplete={handleBreathingComplete} />;
       case "music":
         return <Screen4Music onContinue={handleMusicContinue} />;
+      case "relax":
+        return (
+          <Screen8Relax
+            onStartBreathing={() => setCurrentScreen("breathing")}
+            onStartMusic={() => setCurrentScreen("music")}
+          />
+        );
       case "counseling":
         return <Screen5Counseling onConnect={handleCounselingConnect} onBackHome={() => setCurrentScreen("home")} />;
       case "history":
@@ -176,7 +184,7 @@ export default function App() {
         </div>
 
         {/* Bottom Navigation */}
-        {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile") && (
+        {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile" || currentScreen === "relax") && (
           <BottomNav activeScreen={currentScreen} onNavigate={handleNavigation} />
         )}
       </div>
