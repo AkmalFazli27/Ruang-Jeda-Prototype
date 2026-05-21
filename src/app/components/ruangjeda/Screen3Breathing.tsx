@@ -4,9 +4,10 @@ import { Wind } from "lucide-react";
 
 interface Screen3BreathingProps {
   onComplete: () => void;
+  onBack?: () => void;
 }
 
-export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
+export function Screen3Breathing({ onComplete, onBack }: Screen3BreathingProps) {
   const [currentPhase, setCurrentPhase] = useState(0);
   const [timeLeft, setTimeLeft] = useState(4);
   const [isActive, setIsActive] = useState(false);
@@ -62,10 +63,23 @@ export function Screen3Breathing({ onComplete }: Screen3BreathingProps) {
       <div className="min-h-full flex flex-col items-center p-6 relative z-10">
       {/* Header */}
       <div className="w-full px-6 pt-8 pb-4">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <Wind className="w-6 h-6 text-[#B983FF]" />
-          <h2 className="text-xl font-bold text-white">Latihan Pernapasan 4-7-8</h2>
+        <div className="flex items-center justify-between mb-2">
+          {onBack ? (
+            <button onClick={onBack} className="text-sm text-gray-300 hover:text-white">
+              Kembali
+            </button>
+          ) : (
+            <div style={{ width: 64 }} />
+          )}
+
+          <div className="flex items-center gap-2">
+            <Wind className="w-6 h-6 text-[#B983FF]" />
+            <h2 className="text-xl font-bold text-white">Latihan Pernapasan 4-7-8</h2>
+          </div>
+
+          <div style={{ width: 64 }} />
         </div>
+
         <p className="text-center text-gray-400 text-sm">
           {isActive ? `Siklus ${cycleCount + 1} dari 3` : "Teknik pernapasan untuk menenangkan diri"}
         </p>

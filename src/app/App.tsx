@@ -120,9 +120,9 @@ export default function App() {
       case "triage":
         return <Screen2Triage tier={detectedTier} onContinue={handleTriageContinue} />;
       case "breathing":
-        return <Screen3Breathing onComplete={handleBreathingComplete} />;
+        return <Screen3Breathing onComplete={handleBreathingComplete} onBack={() => setCurrentScreen("relax")} />;
       case "music":
-        return <Screen4Music onContinue={handleMusicContinue} />;
+        return <Screen4Music onContinue={handleMusicContinue} onBack={() => setCurrentScreen("relax")} />;
       case "relax":
         return (
           <Screen8Relax

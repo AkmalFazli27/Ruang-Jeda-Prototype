@@ -6,9 +6,10 @@ import { playlists } from "../../../data/ruangJedaData";
 
 interface Screen4MusicProps {
   onContinue: () => void;
+  onBack?: () => void;
 }
 
-export function Screen4Music({ onContinue }: Screen4MusicProps) {
+export function Screen4Music({ onContinue, onBack }: Screen4MusicProps) {
   const [selectedPlaylist, setSelectedPlaylist] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -18,10 +19,23 @@ export function Screen4Music({ onContinue }: Screen4MusicProps) {
     <div className="min-h-full flex flex-col p-6 pb-32">
       {/* Header */}
       <div className="mb-6 mt-4">
-        <div className="flex items-center gap-2 mb-2">
-          <Music className="w-6 h-6 text-[#B983FF]" />
-          <h2 className="text-2xl font-bold text-white">Musik untuk Fokus & Ketenangan</h2>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          {onBack ? (
+            <button onClick={onBack} className="text-sm text-gray-300 hover:text-white">
+              Kembali
+            </button>
+          ) : (
+            <div style={{ width: 64 }} />
+          )}
+
+          <div className="flex items-center gap-2">
+            <Music className="w-6 h-6 text-[#B983FF]" />
+            <h2 className="text-2xl font-bold text-white">Musik untuk Fokus & Ketenangan</h2>
+          </div>
+
+          <div style={{ width: 64 }} />
         </div>
+
         <p className="text-gray-400">
           Pilih playlist yang sesuai dengan suasana hatimu
         </p>
