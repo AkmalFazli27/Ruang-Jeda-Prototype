@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { GlassCard } from "./GlassCard";
-import { Music, Play, Pause, SkipForward, SkipBack, Volume2 } from "lucide-react";
+import { ArrowLeft, Music, Play, Pause, SkipForward, SkipBack, Volume2 } from "lucide-react";
 import { playlists } from "../../../data/ruangJedaData";
 
 interface Screen4MusicProps {
@@ -19,21 +19,21 @@ export function Screen4Music({ onContinue, onBack }: Screen4MusicProps) {
     <div className="min-h-full flex flex-col p-6 pb-32">
       {/* Header */}
       <div className="mb-6 mt-4">
-        <div className="flex items-center justify-between gap-2 mb-2">
-          {onBack ? (
-            <button onClick={onBack} className="text-sm text-gray-300 hover:text-white">
-              Kembali
+        {onBack && (
+          <div className="mb-4 flex justify-start">
+            <button
+              onClick={onBack}
+              aria-label="Kembali"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 active:scale-95"
+            >
+              <ArrowLeft className="h-5 w-5" />
             </button>
-          ) : (
-            <div style={{ width: 64 }} />
-          )}
-
-          <div className="flex items-center gap-2">
-            <Music className="w-6 h-6 text-[#B983FF]" />
-            <h2 className="text-2xl font-bold text-white">Musik untuk Fokus & Ketenangan</h2>
           </div>
+        )}
 
-          <div style={{ width: 64 }} />
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <Music className="w-6 h-6 text-[#B983FF]" />
+          <h2 className="text-2xl font-bold text-white text-center">Musik untuk Fokus & Ketenangan</h2>
         </div>
 
         <p className="text-gray-400">

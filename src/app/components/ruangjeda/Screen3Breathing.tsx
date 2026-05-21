@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Wind } from "lucide-react";
+import { ArrowLeft, Wind } from "lucide-react";
 
 interface Screen3BreathingProps {
   onComplete: () => void;
@@ -63,21 +63,21 @@ export function Screen3Breathing({ onComplete, onBack }: Screen3BreathingProps) 
       <div className="min-h-full flex flex-col items-center p-6 relative z-10">
       {/* Header */}
       <div className="w-full px-6 pt-8 pb-4">
-        <div className="flex items-center justify-between mb-2">
-          {onBack ? (
-            <button onClick={onBack} className="text-sm text-gray-300 hover:text-white">
-              Kembali
+        {onBack && (
+          <div className="mb-4 flex justify-start">
+            <button
+              onClick={onBack}
+              aria-label="Kembali"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 active:scale-95"
+            >
+              <ArrowLeft className="h-5 w-5" />
             </button>
-          ) : (
-            <div style={{ width: 64 }} />
-          )}
-
-          <div className="flex items-center gap-2">
-            <Wind className="w-6 h-6 text-[#B983FF]" />
-            <h2 className="text-xl font-bold text-white">Latihan Pernapasan 4-7-8</h2>
           </div>
+        )}
 
-          <div style={{ width: 64 }} />
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <Wind className="w-6 h-6 text-[#B983FF]" />
+          <h2 className="text-xl font-bold text-white text-center">Latihan Pernapasan 4-7-8</h2>
         </div>
 
         <p className="text-center text-gray-400 text-sm">

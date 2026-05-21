@@ -143,7 +143,7 @@ export function RichTextEditor({ value, onChange, placeholder, bgColor, textColo
         suppressContentEditableWarning
       />
 
-      <style jsx>{`
+      <style>{`
         .rich-text-editor[contenteditable]:empty:before {
           content: attr(data-placeholder);
           color: rgba(0, 0, 0, 0.4);

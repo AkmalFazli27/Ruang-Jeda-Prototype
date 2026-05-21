@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GlassCard } from "./GlassCard";
 import { Sparkles, FileText } from "lucide-react";
 import { motion } from "motion/react";
+import { RichTextEditor } from "./RichTextEditor";
 
 interface Screen1HomeProps {
   onSubmit: (text: string) => void;
@@ -10,19 +11,22 @@ interface Screen1HomeProps {
 export function Screen1Home({ onSubmit }: Screen1HomeProps) {
   const [journalText, setJournalText] = useState("");
 
-  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setJournalText(e.target.value);
+  const extractPlainText = (html: string) => {
+    const container = document.createElement("div");
+    container.innerHTML = html;
+    return container.textContent?.trim() ?? "";
   };
 
   const handleSubmit = () => {
-    const plainText = journalText.trim();
+    const plainText = extractPlainText(journalText);
     if (plainText) {
       onSubmit(plainText);
     }
   };
 
-  const wordCount = journalText.trim() ? journalText.trim().split(/\s+/).length : 0;
-  const hasContent = journalText.trim().length > 0;
+  const plainText = extractPlainText(journalText);
+  const wordCount = plainText ? plainText.split(/\s+/).length : 0;
+  const hasContent = plainText.length > 0;
 
   return (
     <div className="min-h-full flex flex-col p-6 pb-24">
@@ -38,14 +42,13 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
         </p>
       </div>
 
-      {/* Plain Textarea Card */}
+      {/* Rich Text Editor Card */}
       <GlassCard className="flex-1 flex flex-col min-h-0">
-        <textarea
+        <RichTextEditor
           value={journalText}
-          onChange={handleTextChange}
+          onChange={setJournalText}
           placeholder="Ketikkan apa pun di sini, kami mendengarkan..."
-          className="flex-1 w-full bg-transparent outline-none resize-none text-base leading-relaxed text-white placeholder:text-gray-400 overflow-y-auto"
-          style={{ scrollbarWidth: 'none' }}
+          textColor="white"
         />
 
         {/* Word Counter */}
