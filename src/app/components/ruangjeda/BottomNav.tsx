@@ -1,4 +1,4 @@
-import { Home, Clock, User, Sparkles } from "lucide-react";
+import { Home, Clock, User, Sparkles, Phone } from "lucide-react";
 
 interface BottomNavProps {
   activeScreen: string;
@@ -9,6 +9,7 @@ export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
   const navItems = [
     { id: "home", icon: Home, label: "Home" },
     { id: "relax", icon: Sparkles, label: "Relaksasi" },
+    { id: "counseling", icon: Phone, label: "Konseling" },
     { id: "history", icon: Clock, label: "Riwayat" },
     { id: "profile", icon: User, label: "Profil" }
   ];
@@ -16,7 +17,7 @@ export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[#1A1B41]/80 backdrop-blur-xl border-t border-[#B983FF]/10">
       <div className="max-w-md mx-auto px-4 py-3">
-        <div className="grid grid-cols-4 gap-2 items-center">
+        <div className="grid grid-cols-5 gap-2 items-center">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeScreen === item.id;

@@ -104,7 +104,7 @@ export default function App() {
   };
 
   const handleNavigation = (screen: string) => {
-    if (screen === "home" || screen === "history" || screen === "profile" || screen === "relax") {
+    if (screen === "home" || screen === "history" || screen === "profile" || screen === "relax" || screen === "counseling") {
       setCurrentScreen(screen as Screen);
     }
   };
@@ -184,7 +184,7 @@ export default function App() {
         </div>
 
         {/* Bottom Navigation */}
-        {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile" || currentScreen === "relax") && (
+        {(currentScreen === "home" || currentScreen === "history" || currentScreen === "profile" || currentScreen === "relax" || currentScreen === "counseling") && (
           <BottomNav activeScreen={currentScreen} onNavigate={handleNavigation} />
         )}
       </div>
