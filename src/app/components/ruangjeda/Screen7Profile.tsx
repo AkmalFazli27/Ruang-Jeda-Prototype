@@ -22,16 +22,16 @@ interface JournalEntry {
 
 interface Screen7ProfileProps {
   journalEntries: JournalEntry[];
+  breathingSessions: number;
+  musicSessions: number;
 }
 
-export function Screen7Profile({ journalEntries }: Screen7ProfileProps) {
+export function Screen7Profile({ journalEntries, breathingSessions, musicSessions }: Screen7ProfileProps) {
   const [notifications, setNotifications] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [ambientSound, setAmbientSound] = useState(false);
 
   const totalJournalEntries = journalEntries.length;
-  const breathingSessions = 5;
-  const musicSessions = 12;
 
   return (
     <div className="min-h-full flex flex-col p-6 pb-24">
@@ -98,7 +98,7 @@ export function Screen7Profile({ journalEntries }: Screen7ProfileProps) {
                 {totalJournalEntries}
               </span>
               <span className="text-xs text-gray-400 text-center mt-1">
-                Jurnal
+                Entri jurnal
               </span>
             </div>
 
@@ -109,7 +109,7 @@ export function Screen7Profile({ journalEntries }: Screen7ProfileProps) {
                 {breathingSessions}
               </span>
               <span className="text-xs text-gray-400 text-center mt-1">
-                Nafas
+                Sesi napas selesai
               </span>
             </div>
 
@@ -120,7 +120,7 @@ export function Screen7Profile({ journalEntries }: Screen7ProfileProps) {
                 {musicSessions}
               </span>
               <span className="text-xs text-gray-400 text-center mt-1">
-                Musik
+                Sesi musik selesai
               </span>
             </div>
           </div>

@@ -18,6 +18,8 @@ export default function App() {
   const [detectedTier, setDetectedTier] = useState<Tier>("tier2");
   const [journalEntry, setJournalEntry] = useState("");
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
+  const [breathingSessions, setBreathingSessions] = useState(0);
+  const [musicSessions, setMusicSessions] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleJournalSubmit = (text: string) => {
@@ -86,10 +88,12 @@ export default function App() {
   };
 
   const handleBreathingComplete = () => {
+    setBreathingSessions(prev => prev + 1);
     setCurrentScreen("music");
   };
 
   const handleMusicContinue = () => {
+    setMusicSessions(prev => prev + 1);
     setCurrentScreen("home");
   };
 
@@ -123,7 +127,13 @@ export default function App() {
       case "history":
         return <Screen6History journalEntries={journalEntries} />;
       case "profile":
-        return <Screen7Profile journalEntries={journalEntries} />;
+        return (
+          <Screen7Profile
+            journalEntries={journalEntries}
+            breathingSessions={breathingSessions}
+            musicSessions={musicSessions}
+          />
+        );
       default:
         return <Screen1Home onSubmit={handleJournalSubmit} />;
     }
