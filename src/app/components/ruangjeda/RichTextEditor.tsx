@@ -146,7 +146,7 @@ export function RichTextEditor({ value, onChange, placeholder, bgColor, textColo
       <style>{`
         .rich-text-editor[contenteditable]:empty:before {
           content: attr(data-placeholder);
-          color: rgba(0, 0, 0, 0.4);
+          color: rgba(100, 116, 139, 0.78);
           pointer-events: none;
         }
 
