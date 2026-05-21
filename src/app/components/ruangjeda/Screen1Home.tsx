@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { GlassCard } from "./GlassCard";
-import { RichTextEditor } from "./RichTextEditor";
 import { Sparkles, FileText } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -10,25 +9,20 @@ interface Screen1HomeProps {
 
 export function Screen1Home({ onSubmit }: Screen1HomeProps) {
   const [journalText, setJournalText] = useState("");
-  const [wordCount, setWordCount] = useState(0);
 
-  const handleTextChange = (html: string) => {
-    setJournalText(html);
-    // Count words (strip HTML tags)
-    const text = html.replace(/<[^>]*>/g, "").trim();
-    const words = text ? text.split(/\s+/).length : 0;
-    setWordCount(words);
+  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setJournalText(e.target.value);
   };
 
   const handleSubmit = () => {
-    // Extract plain text from HTML for AI analysis
-    const plainText = journalText.replace(/<[^>]*>/g, "").trim();
+    const plainText = journalText.trim();
     if (plainText) {
       onSubmit(plainText);
     }
   };
 
-  const hasContent = journalText.replace(/<[^>]*>/g, "").trim().length > 0;
+  const wordCount = journalText.trim() ? journalText.trim().split(/\s+/).length : 0;
+  const hasContent = journalText.trim().length > 0;
 
   return (
     <div className="min-h-full flex flex-col p-6 pb-24">
@@ -44,12 +38,14 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
         </p>
       </div>
 
-      {/* Rich Text Editor Card */}
+      {/* Plain Textarea Card */}
       <GlassCard className="flex-1 flex flex-col min-h-0">
-        <RichTextEditor
+        <textarea
           value={journalText}
           onChange={handleTextChange}
           placeholder="Ketikkan apa pun di sini, kami mendengarkan..."
+          className="flex-1 w-full bg-transparent outline-none resize-none text-base leading-relaxed text-white placeholder:text-gray-400 overflow-y-auto"
+          style={{ scrollbarWidth: 'none' }}
         />
 
         {/* Word Counter */}
@@ -75,11 +71,11 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
         >
           <div className="bg-white/5 backdrop-blur-xl rounded-xl p-3 border border-[#B983FF]/10">
             <p className="text-xs text-[#B983FF] font-semibold mb-1">💡 Tips</p>
-            <p className="text-xs text-gray-400">Gunakan toolbar untuk format teks</p>
+            <p className="text-xs text-gray-400">Tulis apa saja yang kamu rasakan, tanpa filter</p>
           </div>
           <div className="bg-white/5 backdrop-blur-xl rounded-xl p-3 border border-[#FFD5BA]/10">
-            <p className="text-xs text-[#FFD5BA] font-semibold mb-1">⌨️ Shortcut</p>
-            <p className="text-xs text-gray-400">ctrl + B Bold, ctrl + I Italic</p>
+            <p className="text-xs text-[#FFD5BA] font-semibold mb-1">🌙 Suasana</p>
+            <p className="text-xs text-gray-400">Nikmati ketenangan malam ini</p>
           </div>
         </motion.div>
       )}
@@ -95,7 +91,7 @@ export function Screen1Home({ onSubmit }: Screen1HomeProps) {
 
       {/* Privacy note */}
       <p className="text-center text-gray-500 text-xs mt-4">
-        🔒 Semua yang kamu tulis bersifat privat dan aman
+        🔒 Curhatanmu 100% dianonimkan oleh AI dan tidak akan dikirim ke BKM tanpa persetujuanmu.
       </p>
     </div>
   );
